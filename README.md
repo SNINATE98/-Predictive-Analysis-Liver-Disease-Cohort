@@ -2,13 +2,31 @@ Entre vie, greffe et décès : Analyse prédictive appliquée à une cohorte hé
 <img width="1792" height="1024" alt="image" src="https://github.com/user-attachments/assets/dc83077b-3cfd-45cb-bf95-e091e9ae615e" />
 
 
-Introduction
-La prédiction du pronostic vital chez les patients atteints de maladies hépatiques représente un enjeu majeur en santé publique, tant pour optimiser la prise en charge médicale que pour anticiper les évolutions cliniques. Dans ce contexte, ce projet a pour objectif de développer un modèle de classification permettant d’estimer, pour chaque patient, la probabilité d’appartenir à l’une des trois catégories suivantes : Status_C (patient vivant), Status_CL (patient vivant ayant bénéficié d’une transplantation hépatique) et Status_D (patient décédé).
+##  Introduction
 
-Les performances des modèles sont évaluées à l’aide du log loss, une métrique qui mesure la qualité des probabilités prédites et pénalise fortement les erreurs de calibration. L’objectif final est donc de minimiser cette valeur afin d’obtenir des prédictions fiables et précises des probabilités associées à chaque issue possible.
+La prédiction du pronostic vital chez les patients atteints de maladies hépatiques constitue un enjeu majeur en santé publique. Elle permet non seulement d’optimiser la prise en charge clinique, mais aussi d’anticiper l’évolution de la maladie et d’adapter les stratégies thérapeutiques.
 
-Pour mener à bien ce travail, nous suivrons une démarche structurée. Nous commencerons par une analyse exploratoire approfondie des données afin de mieux comprendre les caractéristiques de la cohorte et d’identifier les éventuelles anomalies. Nous procéderons ensuite à la gestion des valeurs manquantes et des valeurs aberrantes, étapes essentielles pour garantir la qualité et la robustesse des données utilisées.
+Dans ce projet, nous cherchons à développer un modèle de classification capable d’estimer, pour chaque patient, la probabilité d’appartenir à l’une des trois catégories suivantes :  
+- **Status_C** : patient vivant  
+- **Status_CL** : patient vivant ayant bénéficié d’une transplantation hépatique  
+- **Status_D** : patient décédé  
 
-Dans un premier temps, nous mettrons en œuvre une régression logistique multinomiale, choisie pour sa simplicité et sa capacité à modéliser des sorties multiclasses probabilistes. Enfin, afin d’améliorer la performance du modèle initial, nous expérimenterons des approches plus complexes, notamment l’algorithme XGBoost, reconnu pour son efficacité sur des problématiques de classification multiclasses et sa capacité à gérer des données hétérogènes et bruitées.
+La performance des modèles est évaluée à l’aide du **log loss**, une métrique adaptée aux problèmes de classification probabiliste, qui pénalise fortement les prédictions mal calibrées. L’objectif est donc de minimiser cette valeur afin d’obtenir des probabilités fiables et bien ajustées.
 
-À travers cette approche progressive, nous chercherons à identifier le modèle le plus performant et le mieux calibré pour prédire le statut vital des patients, en veillant à assurer la robustesse des résultats aussi bien sur nos jeux de données internes que sur le dataset d’évaluation externe fourni par Kaggle.
+Le projet suit une démarche méthodologique structurée :
+
+### 🔍 1. Analyse exploratoire des données (EDA)
+Une étude approfondie des données est réalisée afin de comprendre les caractéristiques de la cohorte et de détecter d’éventuelles anomalies.
+
+### 🧹 2. Prétraitement des données
+Cette étape inclut la gestion des valeurs manquantes et des valeurs aberrantes, indispensables pour garantir la qualité et la robustesse des modèles.
+
+### 📊 3. Modélisation initiale
+Une régression logistique multinomiale est utilisée comme modèle de base, en raison de sa simplicité d’interprétation et de sa capacité à produire des probabilités pour des classes multiples.
+
+### 🚀 4. Amélioration des performances
+Des modèles plus avancés, notamment **XGBoost**, sont ensuite testés afin d’améliorer la performance prédictive, en particulier dans un contexte de données complexes et potentiellement bruitées.
+
+---
+
+À travers cette approche progressive, l’objectif est d’identifier le modèle le plus performant et le mieux calibré pour prédire le statut vital des patients. Une attention particulière est portée à la robustesse des résultats, évalués à la fois sur des données internes et sur un jeu de test externe fourni par Kaggle.
